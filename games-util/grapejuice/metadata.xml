@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<upstream>
+		<remote-id type="gitlab">brinkervii/grapejuice</remote-id>
+	</upstream>
+	<use>
+		<flag name="wine">Install wine dependency via <pkg>virtual/wine</pkg></flag>
+		<flag name="prime">Install <pkg>x11-misc/prime-run</pkg> and <pkg>x11-apps/xrandr</pkg></flag>
+	</use>
+	<longdescription lang="en">
+	Grapejuice is a Wine wrapper application that is tailored to Roblox.
+	The aim is to make running Roblox on Linux as painless as possible.
+	</longdescription>
+</pkgmetadata>
