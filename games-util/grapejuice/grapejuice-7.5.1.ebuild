@@ -57,7 +57,7 @@ src_compile() {
 }
 
 src_install() {
-	tar -xvf "${S}"/dist/linux_package/*.tar.bz2 -C "${D}"
+	tar -xvf "${S}"/dist/linux_package/*.tar.gz -C "${D}"
 	mkdir -p "${D}/usr/lib/${EPYTHON}"
 	mv "${D}/usr/lib/python3/dist-packages" "${D}/usr/lib/${EPYTHON}/site-packages"
 	rm -r "${D}/usr/lib/python3"
