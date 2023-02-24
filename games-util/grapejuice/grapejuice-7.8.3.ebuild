@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-PYTHON_COMPAT=( python3_{8..10} )
+PYTHON_COMPAT=( python3_{8..11} )
 inherit xdg optfeature python-single-r1
 
 DESCRIPTION="A Wine+Roblox management tool"
@@ -46,13 +46,13 @@ RDEPEND="sys-devel/gettext
 		app-emulation/wine-vanilla[abi_x86_32]
 		app-emulation/wine-proton[abi_x86_32]
 		virtual/wine[abi_x86_32] )
-	 )
-	 ${PYTHON_DEPS}"
+	 )"
 DEPEND="${RDEPEND}"
 BDEPEND="app-arch/tar"
 
 src_compile() {
 	export PYTHONPATH="${S}/src"
+	rm "${S}/pyproject.toml"
 	${EPYTHON} -m grapejuice_packaging linux_package || die
 }
 
