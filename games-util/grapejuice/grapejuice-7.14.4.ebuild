@@ -2,14 +2,20 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-PYTHON_COMPAT=( python3_{8..11} )
+PYTHON_COMPAT=( python3_{9..12} )
 inherit xdg optfeature python-single-r1
 
 DESCRIPTION="A Wine+Roblox management tool"
 HOMEPAGE="https://brinkervii.gitlab.io/grapejuice/"
 
-SRC_URI="https://gitlab.com/brinkervii/grapejuice/-/archive/v${PV}/grapejuice-v${PV}.tar.bz2"
-S="${WORKDIR}/grapejuice-v${PV}"
+if [[ ${PV} == 9999 ]]; then
+        EGIT_REPO_URI="https://gitlab.com/brinkervii/${PN}.git"
+        inherit git-r3
+	S="${WORKDIR}/grapejuice-${PV}"
+else
+        SRC_URI="https://gitlab.com/brinkervii/grapejuice/-/archive/v${PV}/grapejuice-v${PV}.tar.bz2"
+	S="${WORKDIR}/grapejuice-v${PV}"
+fi
 
 LICENSE="GPL-3"
 SLOT="0"
