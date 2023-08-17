@@ -14,12 +14,12 @@ if [[ ${PV} == 9999 ]]; then
 	S="${WORKDIR}/grapejuice-${PV}"
 else
         SRC_URI="https://gitlab.com/brinkervii/grapejuice/-/archive/v${PV}/grapejuice-v${PV}.tar.bz2"
+	KEYWORDS="-* ~amd64"
 	S="${WORKDIR}/grapejuice-v${PV}"
 fi
 
-LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="-* ~amd64"
+LICENSE="GPL-3"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 IUSE="prime pulseaudio wine"
